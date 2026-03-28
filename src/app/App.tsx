@@ -1,7 +1,7 @@
 import { initSurvicate } from '../public-path';
 import { lazy, Suspense } from 'react';
 import React from 'react';
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Navigate,Route, RouterProvider } from 'react-router-dom';
 import ChunkLoader from '@/components/loader/chunk-loader';
 import RoutePromptDialog from '@/components/route-prompt-dialog';
 import { crypto_currencies_display_order, fiat_currencies_display_order } from '@/components/shared';
@@ -9,7 +9,6 @@ import { useOfflineDetection } from '@/hooks/useOfflineDetection';
 import { StoreProvider } from '@/hooks/useStore';
 import CallbackPage from '@/pages/callback';
 import Endpoint from '@/pages/endpoint';
-import LandingPage from '@/pages/landing/LandingPage';
 import { TAuthData } from '@/types/api-types';
 import { initializeI18n, localize, TranslationProvider } from '@deriv-com/translations';
 import CoreStoreProvider from './CoreStoreProvider';
@@ -52,8 +51,8 @@ const router = createBrowserRouter(
                 </SuspenseWrapper>
             }
         >
-            {/* All child routes will be passed as children to Layout */}
-            <Route index element={<LandingPage />} />
+            {/* Redirect root to dashboard, all other routes available */}
+            <Route index element={<Navigate to='/dashboard' replace />} />
             <Route path='dashboard' element={<AppRoot />} />
             <Route path='endpoint' element={<Endpoint />} />
             <Route path='callback' element={<CallbackPage />} />
