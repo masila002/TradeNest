@@ -47,6 +47,7 @@ export default defineConfig({
                 GROWTHBOOK_CLIENT_KEY: JSON.stringify(process.env.GROWTHBOOK_CLIENT_KEY),
                 GROWTHBOOK_DECRYPTION_KEY: JSON.stringify(process.env.GROWTHBOOK_DECRYPTION_KEY),
                 AFFILIATE_SIGNUP_URL: JSON.stringify(process.env.AFFILIATE_SIGNUP_URL || ''),
+                DERIV_APP_ID: JSON.stringify(process.env.DERIV_APP_ID),
             },
         },
         alias: {

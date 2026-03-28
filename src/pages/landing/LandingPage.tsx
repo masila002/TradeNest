@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { AFFILIATE_SIGNUP_URL } from '@/constants/affiliate';
 import { PATH_DASHBOARD, PATH_LANDING } from '@/constants/platform-routes';
-import { site_display_name } from '@/utils/site-config';
+import { site_display_name, site_tagline } from '@/utils/site-config';
 import './landing-page.scss';
 
 const LandingPage = () => {
@@ -63,8 +63,8 @@ const LandingPage = () => {
 
                 <section className='landing-page__section'>
                     <p className='landing-page__trust'>
-                        Trusted by active Deriv users exploring automation — results vary; past activity is not a promise
-                        of future performance.
+                        Trusted by active Deriv users exploring automation — results vary; past activity is not a
+                        promise of future performance.
                     </p>
                 </section>
 
