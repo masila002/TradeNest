@@ -1,0 +1,2 @@
+# SPA: serve index.html for client-side routes (assets are still matched first by Pages)
+/*    /index.html   200
